@@ -52,7 +52,9 @@ const Todo = () => {
       setFilterList(allList);
     }
   };
-
+  const editList=(id)=>{
+ console.log("edit button clicked",id);
+  }
   return (
     <>
       <div className="container">
@@ -90,6 +92,7 @@ const Todo = () => {
                         key={item.toString()}
                       >
                         {item.name}
+                        if(item.id)
                       </label>
                     </div>
                     <div>
@@ -143,7 +146,7 @@ const Todo = () => {
                         ""
                       )}
 
-                      <i className="fas fa-edit mx-4"></i>
+                      <i className="fas fa-edit mx-4"onClick={()=> editList(item.id)}></i>
                       <i
                         className="fas fa-trash-alt mt-3"
                         onClick={() => deleteList(item.id)}
